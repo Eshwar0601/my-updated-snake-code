@@ -90,7 +90,23 @@ while True:
         x = random.randint(-290,290)
         y = random.randint(-290,290)
         food.goto(x,y)
+        
+#cheack for a collision with border
+    if head.xcor() > 290 or head.xcor() < -290 or head.ycor() >290 or head.ycor() < -290:
+        time.sleep(1)
+        head.goto(0,0)
+        head.direction = "stop"
 
+
+        
+        #clear the segments
+        for segment in segments:
+            segments.cleaqr()
+
+
+        #hide the segments
+        for segment in segments:
+            segment.goto(1000,1000)
 
 
         # add a segment
